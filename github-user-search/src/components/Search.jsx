@@ -10,7 +10,10 @@ const Search = () => {
     const [loading, setLoading] = useState(false);
 
     const handleChange = (e) => {
-        setUsername(e.target.value);
+        const { name, value } = e.target;
+        if (name === 'username') setUsername(value);
+        if (name === 'location') setLocation(value);
+        if (name === 'minRepos') setMinRepos(value);
     };
 
     const handleSearch = async (e) => {
